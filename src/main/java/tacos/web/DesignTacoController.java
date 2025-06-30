@@ -51,7 +51,8 @@ public class DesignTacoController {
 	}
 
 	@GetMapping
-	public String showDesignForm() {
+	public String showDesignForm(Model model) {
+		addIngredientsToModel(model);
 		return "design"; // Nombre lógico de la vista
 	}
 
