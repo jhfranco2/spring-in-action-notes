@@ -1,24 +1,25 @@
 package tacos;
 
+import java.util.Date;
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "ingredients")
-public class Ingredient {
+@AllArgsConstructor
+@Document("tacos")
+public class TacoDocument {
 
     @Id
     private String id;
-    private String name;
-    private Type type;
 
-    public enum Type {
-        WRAP, PROTEIN, VEGGIES, CHEESE, SAUCE
-    }
+    private String name;
+    private Date createdAt;
+    private List<Ingredient> ingredients;
 }
